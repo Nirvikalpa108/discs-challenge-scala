@@ -14,9 +14,9 @@ object Main {
     val answer = workOutAnswer(points)
 
     // validate and display the answer
-    if (answer.length > 50) {
-      println(s"${RED}A valid submission contains at most 50 discs. This answer contains ${answer.length} discs ${RESET}")
-    } else {
+//    if (answer.length > 50) {
+//      println(s"${RED}A valid submission contains at most 50 discs. This answer contains ${answer.length} discs ${RESET}")
+//    } else {
       // print answer
       val totalArea = answer.map(areaOfDisc).sum
       println(s"${CYAN}Your answer is:${RESET} ${MAGENTA}${formatAnswer(answer)}${RESET}")
@@ -28,7 +28,7 @@ object Main {
       Files.write(Paths.get(visualisationFile), html.getBytes(StandardCharsets.UTF_8))
       println(s"Open the following in your browser to see your answer")
       println(s"${CYAN}Visualisation:${RESET} ${MAGENTA}file://$visualisationFile${RESET}")
-    }
+//    }
   }
 
   def formatAnswer(discs: List[Disc]): String = {
